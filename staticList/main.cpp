@@ -11,15 +11,14 @@
  * 
  */
 int main(/*int argc, char** argv*/) {
-    std::cout << "Criacao de lista com o maximo de " << MAX << " itens\n";
+    std::cout << "Criacao de lista com o maximo de " << List::MAX << " itens\n";
     std::cout << "============================================\n";
-    
-    list* lst = constructor();
-    add(lst, 3);
-    add(lst, 6);
-    add(lst, 9);
-//    remove(lst, 6);
-    show(lst);
-    destructor(lst);
+
+    List lst;
+    lst.add(3);
+    lst.add(6);
+    lst.add(9);
+    lst.remove(6);
+    lst.show();
     return 0;
 }
