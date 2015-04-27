@@ -32,6 +32,11 @@ class List {
         }
         int remove(int value)
         {
+            for (int index = 0; index < this->qtd; index++) {
+                if (value == this->value[index] && index < this->qtd) {
+                    this->value[index] = this->value[index+1];
+                }
+            }
             this->qtd--;
             std::cout << "remove value: " << value << "\n";
             std::cout << "total: " << this->qtd << "\n";
