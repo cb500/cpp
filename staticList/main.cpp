@@ -6,19 +6,21 @@
  */
 #include <iostream>
 #include "list.h"
-
 /*
  * 
  */
 int main(/*int argc, char** argv*/) {
-    std::cout << "Criacao de lista com o maximo de " << List::MAX << " itens\n";
+    std::cout << "Lista de inteiros\n";
     std::cout << "============================================\n";
-
-    List lst;
-    lst.add(3);
-    lst.add(6);
-    lst.add(9);
-    lst.remove(6);
-    lst.show();
+    
+    int value;
+    List* list = new List;
+    do {
+        std::cout << "Informe o numero a ser inserido a lista: (0 para sair)";
+        std::cin >> value;
+        list->add(value);
+    } while (value != 0);
+    list->show();
+    delete list;
     return 0;
 }
