@@ -10,7 +10,8 @@
  * 
  */
 int main(/*int argc, char** argv*/) {
-    std::cout << "Lista de inteiros\n";
+    std::cout << "============================================\n";
+    std::cout << "Lista estatica | " << List::MAX << " inteiros\n";
     std::cout << "============================================\n";
     
     int value;
@@ -20,6 +21,7 @@ int main(/*int argc, char** argv*/) {
         std::cin >> value;
         list->add(value);
     } while (value != 0);
+    list->remove(3);
     list->show();
     delete list;
     return 0;
