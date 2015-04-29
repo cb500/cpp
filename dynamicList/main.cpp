@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
             list->add(value);
         }
     } while (value != 0);
-//    list->remove(3);
+    list->remove(3);
     list->show();
     delete list;
     return 0;

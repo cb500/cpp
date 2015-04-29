@@ -13,11 +13,15 @@ class List
     struct Node {
         int value;
         Node *next;
+        Node() {
+            this->next = NULL;
+        }
     } *first;
     public:
         List();
         ~List();
         bool add(int value);
+        bool remove(int value);
         bool show();
 };
 #endif
