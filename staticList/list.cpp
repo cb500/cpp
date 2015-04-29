@@ -29,7 +29,11 @@ int List::remove(int value) {
         }
     }
     for (int indexToMove = index; indexToMove < this->qtd; indexToMove++) {
-        this->value[indexToMove] = this->value[indexToMove+1];
+        if (indexToMove+1 < this->qtd) {
+            this->value[indexToMove] = this->value[indexToMove+1];
+        } else {
+            this->value[indexToMove] = NULL;
+        }
     }
     if (index < List::MAX) {
         std::cout << "============================================\n";
