@@ -32,7 +32,7 @@ int List::remove(int value) {
     if (index+1 < this->qtd) {
         memmove(&this->value[index], &this->value[index+1], sizeof(int) * ((this->qtd-1) - index));
     }
-    if (index < List::MAX) {
+    if (this->qtd > 0 && index < List::MAX) {
         std::cout << "============================================\n";
         std::cout << "removed value: " << value << "\n";
         this->qtd--;
