@@ -23,7 +23,7 @@ int main() {
     do {
         std::cout << "Informe o numero a ser inserido a lista: (0 para sair)";
         std::cin >> value;
-        if (value > 0) {
+        if (value != 0) {
             list->add(value);
         }
     } while (value != 0);
