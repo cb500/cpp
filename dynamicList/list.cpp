@@ -37,7 +37,11 @@ bool List::remove(int value) {
     Node *onde = this->first;
     while (onde) {
         if (value == onde->value) {
-            anterior->next = onde->next;
+            if (onde == this->first) {
+                this->first = onde->next;
+            } else {
+                anterior->next = onde->next;
+            }
             delete onde;
             break;
         } else {
