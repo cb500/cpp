@@ -2,6 +2,7 @@
  *
  */
 #include <iostream>
+#include <cstring>
 #include "list.h"
 List::List() {
     this->qtd = 0;
@@ -28,13 +29,8 @@ int List::remove(int value) {
             break;
         }
     }
-    int indexToMove = index;
-    for (indexToMove; indexToMove < this->qtd; indexToMove++) {
-        if (indexToMove+1 < this->qtd) {
-            this->value[indexToMove] = this->value[indexToMove+1];
-        } else {
-            this->value[indexToMove] = NULL;
-        }
+    if (index+1 < this->qtd) {
+        memmove(&this->value[index], &this->value[index+1], sizeof(int) * ((this->qtd-1) - index));
     }
     if (index < List::MAX) {
         std::cout << "============================================\n";
