@@ -23,12 +23,13 @@ int List::add(int value) {
 }
 int List::remove(int value) {
     int index = 0;
-    for (; index < this->qtd; index++) {
+    for (index; index < this->qtd; index++) {
         if (value == this->value[index]) {
             break;
         }
     }
-    for (int indexToMove = index; indexToMove < this->qtd; indexToMove++) {
+    int indexToMove = index;
+    for (indexToMove; indexToMove < this->qtd; indexToMove++) {
         if (indexToMove+1 < this->qtd) {
             this->value[indexToMove] = this->value[indexToMove+1];
         } else {
