@@ -38,14 +38,17 @@ void Crypt::doCrypt() {
 }
 void Crypt::doDecrypt() {
     std::string decripted;
+	std::string tmpText;
     decripted = base64_decode(this->cryptedtext);
     int index;
     int stringSize = decripted.length();
     for (index = 0; index < stringSize; index++) {
         int saltIndex;
         saltIndex = index > this->salt.size() ? index % this->salt.size() : index;
-        this->cryptedtext[index] = (decripted[index] ^ this->salt[saltIndex]);
+        tmpText[index] = (decripted[index] ^ this->salt[saltIndex]);
     }
+	
+	this->cryptedtext = tmpText;
 }
 /** /
 std::cout << "\n";
