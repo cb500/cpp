@@ -29,6 +29,7 @@ int main() {
 
     crypt->doDecrypt();
     cout << "Texto com decrypt: " << crypt->getCryptedtext().data() << endl;
+    delete crypt;
 
     return 0;
 }
